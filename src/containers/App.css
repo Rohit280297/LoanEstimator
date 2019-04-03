@@ -1,0 +1,10 @@
+.App {
+  text-align: center;
+}
+
+.spinner{
+  position: relative;
+  display: inline-block;
+  top: 45vh;
+  z-index: 200;
+}

@@ -1,0 +1,102 @@
+.Calculator{
+    width: 100%;
+    background: #2A2438;
+    height: 100vh;
+    position: relative;
+}
+
+.box{
+    background:#120b21;
+    height: 50%;
+    position: absolute;
+    top: 30%;
+    left: 50%;
+    transform: translate(-50%,-30%);
+    padding: 0;
+}
+
+.InputSection{
+    background: #6a6674;
+    height: 100%;
+    margin: 0;
+}
+
+.slider{
+    color: white;
+}
+
+.OutputSection{
+    height: 100%;
+}
+
+.InputDivs{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+    width: 80%;
+    /* height: 100%; */
+}
+
+.InputDiv{
+    /* color: white; */
+    text-align: left;
+    padding: 5vmin 0;
+}
+
+#fieldTitle{
+    color: white;
+    font-size: 4vmin;
+    letter-spacing: 2px;
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+}
+
+#inputField{
+    padding: 8px;
+    outline: none;
+    border: none;
+}
+
+#outputTitle{
+    color: white;
+    font-size: 4vmin;
+}
+#output{
+    color: white;
+    font-size: 5vmin;
+}
+
+@media (min-width :1024px){
+    .OutputDiv{
+        width: 100%;
+        padding: 3vmin;
+    }
+
+    .OutputDivs{
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%,-50%);
+        width: 80%;
+        /* height: 100%; */
+    }
+}
+
+@media (max-width:768px){
+    .box{
+        width: 90%;
+        margin: auto;
+        top: 20%;
+    }
+    .slider{
+        color:transparent;
+    }
+}
+
+@media (min-width:1023px){
+    .box{
+        width: 80%;
+        margin: 2vmin auto;
+        height: 70vh;
+    }
+}
