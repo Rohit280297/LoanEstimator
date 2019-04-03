@@ -14,3 +14,5 @@ In order to run the code, follow the steps below.
 6) This will install all the modules needed for this project.
 7) After the installation, run *npm start* in the command line.
 8) The project will open in the browser on port 3000.
+
+Deployed on https://full-throttle-rohit.herokuapp.com/
