@@ -18,31 +18,26 @@ class Calculator extends React.Component{
     componentDidMount(){
        axios.get('https://ftl-frontend-test.herokuapp.com/interest?amount=500&numMonths=6').then(res=>{
            this.setState({
-                response:res.data
+            emi:res.data.monthlyPayment.amount,
+            roi:res.data.interestRate
            })
-       }) 
+       })
     }
 
     componentDidUpdate(){
         axios.get(`https://ftl-frontend-test.herokuapp.com/interest?amount=${this.state.amount}&numMonths=${this.state.months}`).then(res=>{
             this.setState({
-                response:res.data
+                emi:res.data.monthlyPayment.amount,
+                roi:res.data.interestRate
             })
-        }) 
-    }
-
-    fetchResults=()=>{
-        this.setState({
-            emi:this.state.response.monthlyPayment.amount,
-            roi:this.state.response.interestRate
         })
     }
 
     amountFieldHandler=e=>{
-        this.setState({amount:e.target.value})
+            this.setState({amount:e.target.value})
     }
     monthFieldHandler=e=>{
-        this.setState({months:e.target.value})
+            this.setState({months:e.target.value})
     }
 
     monthChange=(value)=>{
@@ -60,7 +55,7 @@ class Calculator extends React.Component{
                     <div className="InputDivs">
                         <div className="InputDiv">
                             <h3 id="fieldTitle">Loan Amount</h3>
-                            <input id="inputField" placeholder="Loan Amount" type="text" value={this.state.amount} onChange={()=>this.amountFieldHandler} />
+                            <input id="inputField" placeholder="Loan Amount" type="number" min="500" max="5000" value={this.state.amount} onChange={this.amountFieldHandler} />
                             <div className="slider">
                                 <Slider
                                     min={500}
@@ -75,7 +70,7 @@ class Calculator extends React.Component{
 
                         <div className="InputDiv">
                             <h3 id="fieldTitle">Payment Term</h3>
-                            <input id="inputField" placeholder="Payment Term" type="text" value={this.state.months} onChange={()=>this.monthFieldHandler} />
+                            <input id="inputField" placeholder="Payment Term" type="number" min="6" max="24" value={this.state.months} onChange={this.monthFieldHandler} />
                             <div className="slider">
                                 <Slider
                                     min={6}
